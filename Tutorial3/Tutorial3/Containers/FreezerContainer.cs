@@ -2,20 +2,19 @@
 
 public class FreezerContainer : Container
 {
-    public String Product;
+    public string Product;
     public double Temperature;
-    public FreezerContainer(double cargoWeight, double cargoHeight, double cargoSelfWeight, double cargoMaxWeight, double cargoDepth, String product) : 
-        base(cargoWeight, cargoHeight, cargoSelfWeight, cargoMaxWeight, cargoDepth)
+    public FreezerContainer(double cargoWeight, double cargoHeight, double cargoSelfWeight, double cargoMaxWeight, double cargoDepth, string product) : 
+        base(cargoHeight, cargoSelfWeight, cargoMaxWeight, cargoDepth)
     {
-        
         Product = product;
         ConType = "F";
         SerialNum = "KON-" + ConType+"-"+IdNum;
     }
 
-    public void Load(double cargoWeight, String product)
+    public void Load(double cargoWeight)
     {
-        switch (product)
+        switch(Product)
         {
          case "Bananas":
              Temperature = 13.3;
@@ -52,5 +51,10 @@ public class FreezerContainer : Container
              break;
         }
         base.Load(cargoWeight);
+    }
+
+    public override string ToString()
+    {
+        return "Waga ładunku -> "+CargoWeight +"kg "+ " Wysokość kontenera -> "+CargoHeight+"cm "+" Głębokość kontenera -> "+CargoDepth+"cm "+ " Waga konetenera -> "+CargoSelfWeight+"kg "+ " Maksymalna waga konetera -> "+CargoMaxWeight+"kg "+"Temperatura w kontenerze -> "+Temperature+" "+"Produkt"+Product+" "+SerialNum;
     }
 }

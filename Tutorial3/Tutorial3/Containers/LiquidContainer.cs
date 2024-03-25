@@ -6,8 +6,8 @@ namespace Tutorial3.Containers;
 public class LiquidContainer : Container, IHazardNotifier
 {
     public bool HazardCargo;
-    public LiquidContainer(double cargoWeight, double cargoHeight, double cargoSelfWeight, double cargoMaxWeight, double cargoDepth,bool hazardCargo) :
-        base(cargoWeight, cargoHeight, cargoSelfWeight,cargoMaxWeight,cargoDepth)
+    public LiquidContainer(double cargoHeight, double cargoSelfWeight, double cargoMaxWeight, double cargoDepth,bool hazardCargo) :
+        base(cargoHeight, cargoSelfWeight,cargoMaxWeight,cargoDepth)
     {
         HazardCargo = hazardCargo;
         ConType = "L";
@@ -42,5 +42,9 @@ public class LiquidContainer : Container, IHazardNotifier
         Console.WriteLine("Niebiezpiecnza sytuacja -> "+SerialNum);
         throw new NotImplementedException();
     }
-    
+
+    public override string ToString()
+    {
+        return "Waga ładunku -> "+CargoWeight +"kg "+ " Wysokość kontenera -> "+CargoHeight+"cm "+" Głębokość kontenera -> "+CargoDepth+"cm "+ " Waga konetenera -> "+CargoSelfWeight+"kg "+ " Maksymalna waga konetera -> "+CargoMaxWeight+"kg "+ "Czy towar jest niebezpiczny? -> "+HazardCargo+" "+SerialNum;
+    }
 }

@@ -11,17 +11,17 @@ public class Container : IContainer
     public double CargoDepth {get; set;}
     public double CargoMaxWeight { get; set; }
     public static int IdNum = 0;
-    public String ConType = "C";
-    public String SerialNum { get; set; }
+    public string ConType = "C";
+    public string SerialNum { get; set; }
 
-    public Container(double cargoWeight, double cargoHeight, double cargoSelfWeight, double cargoMaxWeight, double cargoDepth)
+    public Container(double cargoHeight, double cargoSelfWeight, double cargoMaxWeight, double cargoDepth)
     {
+        CargoWeight = 0;
         IdNum += 1;
         SerialNum = "KON-" + ConType+"-"+IdNum;
         CargoSelfWeight = cargoSelfWeight;
         CargoMaxWeight = cargoMaxWeight;
         CargoDepth = cargoDepth;
-        CargoWeight = cargoWeight;
         CargoHeight = cargoHeight;
     }
 
@@ -32,8 +32,12 @@ public class Container : IContainer
 
     public virtual void Load(double cargoWeight)
     {
-        Console.WriteLine("Container");
         CargoWeight = cargoWeight;
         // throw new OverfillException();
+    }
+
+    public override string ToString()
+    {
+        return " "+SerialNum;
     }
 }
