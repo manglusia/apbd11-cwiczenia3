@@ -2,8 +2,10 @@
 
 public class LiquidContainer : Container
 {
-    public LiquidContainer(double cargoWeight) : base(cargoWeight)
+    public LiquidContainer(double cargoWeight, double cargoHeight, double cargoSelfWeight, double cargoMaxWeight, double cargoDepth) :
+        base(cargoWeight, cargoHeight, cargoSelfWeight,cargoMaxWeight,cargoDepth)
     {
+        
     }
     
     public override void Load(double cargoWeight)
@@ -11,4 +13,5 @@ public class LiquidContainer : Container
         base.Load(cargoWeight);
         Console.WriteLine("LiquidContainer");
     }
+    
 }
