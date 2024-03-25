@@ -1,4 +1,5 @@
-﻿using Tutorial3.Interfaces;
+﻿using Tutorial3.Exceptions;
+using Tutorial3.Interfaces;
 
 namespace Tutorial3.Containers;
 
@@ -21,7 +22,8 @@ public class LiquidContainer : Container, IHazardNotifier
             if (cargoWeight>CargoMaxWeight)
             {
                 Notification();
-            }
+                throw new OverfillException();
+            }else{base.Load(cargoWeight);}
         }
         else
         {
@@ -29,13 +31,15 @@ public class LiquidContainer : Container, IHazardNotifier
             if (cargoWeight>CargoMaxWeight)
             {
                 Notification();
-            } 
+                throw new OverfillException();
+            }
+            else{base.Load(cargoWeight);}
         }
     }
     
     public void Notification()
     {
-        Console.WriteLine("Niebiezpiecnza sytuacja -> "+IdNum);
+        Console.WriteLine("Niebiezpiecnza sytuacja -> "+SerialNum);
         throw new NotImplementedException();
     }
     
