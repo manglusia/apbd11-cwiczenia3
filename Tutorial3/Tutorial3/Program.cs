@@ -15,8 +15,8 @@ using Tutorial3.Containers;
 // Console.WriteLine(ex.Message);
 
 Container container = new Container(10.0,6.0, 4.0, 20.0, 3.0);
-Container liquidContainer = new LiquidContainer(10.0,6.0, 4.0, 20.0, 3.0);
-LiquidContainer liquidContainer2 = new LiquidContainer(10.0,6.0, 4.0, 20.0, 3.0);
+Container liquidContainer = new LiquidContainer(10.0,6.0, 4.0, 20.0, 3.0,true);
+LiquidContainer liquidContainer2 = new LiquidContainer(10.0,6.0, 4.0, 20.0, 3.0, false);
 container.Load(10);
 liquidContainer.Load(10);
 liquidContainer2.Load(10);
