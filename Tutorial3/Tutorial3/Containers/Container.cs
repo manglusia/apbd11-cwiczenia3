@@ -27,7 +27,7 @@ public class Container : IContainer
 
     public void Unload()
     {
-        throw new NotImplementedException();
+        CargoWeight = 0;
     }
 
     public virtual void Load(double cargoWeight)
