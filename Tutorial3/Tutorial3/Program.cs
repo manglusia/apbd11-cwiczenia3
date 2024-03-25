@@ -1,3 +1,31 @@
-﻿:// See https://aka.ms/new-console-template for more information
+﻿using Tutorial3;
+using Tutorial3.Containers;
 
-Console.WriteLine("Hello, World!");
+// var container = new Container(10.0)
+// {
+//     CargoWeight = 12.0
+// };
+//
+// int? a = 1;
+// a = null;
+//
+// Exception? ex = new Exception();
+// ex = null;
+//
+// Console.WriteLine(ex.Message);
+
+Container container = new Container(10.0);
+Container liquidContainer = new LiquidContainer(10.0);
+LiquidContainer liquidContainer2 = new LiquidContainer(10.0);
+container.Load(10);
+liquidContainer.Load(10);
+liquidContainer2.Load(10);
+
+
+// ArrayList
+List<int> numbers = new List<int>() { 1, 2, 3 };
+List<int> numbers2 = new() { 1, 2, 3 };
+// Set
+HashSet<int> set = new HashSet<int>() { 3, 4, 5 };
+// Map
+Dictionary<PossibleProducts, double> products = new();
