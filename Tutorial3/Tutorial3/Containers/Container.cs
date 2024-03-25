@@ -10,13 +10,14 @@ public class Container : IContainer
     public double CargoSelfWeight {get; set;}
     public double CargoDepth {get; set;}
     public double CargoMaxWeight { get; set; }
-    private static int idNum = 0;
+    public static int IdNum = 0;
     public String ConType = "C";
     public String SerialNum { get; set; }
 
     public Container(double cargoWeight, double cargoHeight, double cargoSelfWeight, double cargoMaxWeight, double cargoDepth)
     {
-        
+        IdNum += 1;
+        SerialNum = "KON-" + ConType+"-"+IdNum;
         CargoSelfWeight = cargoSelfWeight;
         CargoMaxWeight = cargoMaxWeight;
         CargoDepth = cargoDepth;
